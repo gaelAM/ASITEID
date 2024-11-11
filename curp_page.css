@@ -1,0 +1,186 @@
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+    background-color: #f7f7f7;
+    color: #333;
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: 2em;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Estilo para el contenedor de botones */
+.buttons-container {
+    margin: 20px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Botón "Regresar a Inicio" */
+button.back-button {
+    background-color: #1a5a37;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.back-button:hover {
+    background-color: #114c2d;
+}
+
+/* Botón "Escanear con Cámara" */
+button.scan-button {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.scan-button:hover {
+    background-color: #0056b3;
+}
+
+/* Botón "Elegir Archivo" */
+.label-file {
+    background-color: #ffc107;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.label-file:hover {
+    background-color: #e0a800;
+}
+
+/* Botón "Eliminar Seleccionados" */
+button.delete-btn {
+    background-color: #dc3545;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.delete-btn:hover {
+    background-color: #a71d2a;
+}
+
+/* Estilo para input de archivo */
+input[type="file"] {
+    display: none; /* Oculta el botón de archivo por defecto */
+}
+
+/* Estilos para la tabla */
+.table-container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    max-width: 600px;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Ventana emergente de la cámara */
+#cameraContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+#closeCamera {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+/* Adaptación para dispositivos móviles */
+@media (max-width: 600px) {
+    table, th, td {
+        font-size: 14px;
+    }
+
+    .buttons-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #cameraContainer {
+        width: 90%; /* Reduce el ancho de la ventana emergente */
+        max-width: 100%; /* Asegura que no se salga horizontalmente */
+        height: auto; /* Ajusta la altura automáticamente */
+        max-height: 90vh; /* Limita la altura máxima a 90% de la ventana */
+        padding: 10px; /* Reduce el padding */
+        top: 50%; /* Ajusta la posición vertical */
+        left: 50%; /* Ajusta la posición horizontal */
+        transform: translate(-50%, -50%); /* Centra la ventana */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #camera {
+        width: 100%; /* Asegura que la cámara se ajuste al contenedor */
+        height: auto; /* Mantiene la proporción de la cámara */
+        max-height: 80vh; /* Limita la altura máxima de la cámara */
+    }
+
+    #closeCamera {
+        padding: 8px 12px; /* Ajusta el padding del botón de cerrar */
+        font-size: 0.9em; /* Ajusta el tamaño de fuente */
+    }
+
+}
+
+

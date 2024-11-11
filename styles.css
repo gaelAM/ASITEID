@@ -1,0 +1,111 @@
+/* Estilo general */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to bottom right, #f7f7f7, #e0e0e0);
+    min-height: 100vh;
+    text-align: center;
+    color: #333;
+}
+
+header h1 {
+    font-family: 'Merriweather', serif;
+    font-size: 2.5em;
+    color: #1a5a37;
+    margin-top: 20px;
+}
+
+header h2 {
+    font-size: 1.5em;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.description p {
+    max-width: 600px;
+    color: #666;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Carrusel */
+.carousel {
+    position: relative;
+    width: 80%;
+    max-width: 600px;
+    overflow: hidden;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-track {
+    display: flex;
+    animation: scroll 20s linear infinite;
+}
+
+.carousel img {
+    width: 100%;
+    flex-shrink: 0;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Animación del carrusel */
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    14.28% { transform: translateX(-100%); }
+    28.57% { transform: translateX(-200%); }
+    42.86% { transform: translateX(-300%); }
+    57.14% { transform: translateX(-400%); }
+    71.43% { transform: translateX(-500%); }
+    85.71% { transform: translateX(-600%); }
+    100% { transform: translateX(0); }
+}
+
+/* Botón de navegación */
+.navigation {
+    margin-top: 20px;
+}
+
+.navigation button {
+    padding: 10px 20px;
+    font-size: 1em;
+    background-color: #1a5a37;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navigation button:hover {
+    background-color: #114c2d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Adaptación para dispositivos móviles */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 2em;
+    }
+
+    .carousel {
+        width: 90%;
+    }
+
+    .navigation button {
+        width: 100%;
+        font-size: 1.2em;
+        padding: 12px;
+    }
+}

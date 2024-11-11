@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escáner de QR para CURP</title>
+    <link rel="stylesheet" href="curp_page.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsqr/dist/jsQR.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="icon" href="images/icono.png" type="image/x-icon">
+</head>
+<body>
+    <h1>Registro de CURP´s</h1>
+
+    <div class="buttons-container">
+        <button onclick="window.location.href='index.html'" class="back-button">Regresar a Inicio</button>
+        <button onclick="startCamera()" class="scan-button">Escanear con Cámara</button>
+        <label for="qrInput" class="label-file">Elegir archivo</label>
+        <input type="file" id="qrInput" accept="image/*" style="display: none;">
+        <button class="delete-btn" onclick="deleteSelectedRows()">Eliminar Seleccionados</button>
+    </div>
+
+    <div class="table-container">
+        <table id="outputTable">
+            <thead>
+                <tr>
+                    <th>Seleccionar</th>
+                    <th>Clave</th>
+                    <th>CURP´s Asociadas</th>
+                    <th>Apellido Paterno</th>
+                    <th>Apellido Materno</th>
+                    <th>Nombres</th>
+                    <th>Sexo</th>
+                    <th>Fecha de Nacimiento</th>
+                    <th>Entidad de Registro</th>
+                    <th>Homoclave</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+                <!-- Aquí se agregarán las filas de datos dinámicamente -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="cameraContainer" style="display: none;">
+        <video id="camera" width="600" height="400"></video>
+        <button id="closeCamera" onclick="stopCamera()">Cerrar</button>
+    </div>
+</body>
+</html>
